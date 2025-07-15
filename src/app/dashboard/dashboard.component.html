@@ -1,0 +1,20 @@
+  <div class="dashboard">
+      <h1>Welcome, {{ user()?.name }}!</h1>
+
+      <div class="dashboard-grid">
+        <div class="card">
+          <h3>Account Balance</h3>
+          <p class="balance">{{ balance() | currency }}</p>
+        </div>
+
+        <div class="card">
+          <h3>Recent Transactions</h3>
+          <p>{{ recentTransactions() }} transactions</p>
+        </div>
+
+        <div class="card">
+          <h3>Security Status</h3>
+          <p class="status-secure">All systems secure</p>
+        </div>
+      </div>
+    </div>

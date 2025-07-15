@@ -1,0 +1,22 @@
+<header class="header">
+  <div class="container">
+    <div class="logo">
+      <a routerLink="/">SecureFintech</a>
+    </div>
+
+    @if (isAuthenticated()) {
+    <nav class="nav">
+      <a routerLink="/dashboard" routerLinkActive="active">Dashboard</a>
+      <a routerLink="/transactions" routerLinkActive="active">Transactions</a>
+      @if (isAdmin()) {
+      <a routerLink="/admin" routerLinkActive="active">Admin</a>
+      }
+    </nav>
+
+    <div class="user-menu">
+      <span>Hello, {{ user()?.name }}</span>
+      <button (click)="logout()" class="logout-button">Logout</button>
+    </div>
+    }
+  </div>
+</header>

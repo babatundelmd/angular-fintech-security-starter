@@ -1,0 +1,33 @@
+ .not-found {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 80vh;
+      text-align: center;
+    }
+    .content h1 {
+      font-size: 6rem;
+      color: #1976d2;
+      margin: 0;
+    }
+    .content h2 {
+      font-size: 2rem;
+      margin: 1rem 0;
+    }
+    .content p {
+      font-size: 1.2rem;
+      color: #6c757d;
+      margin: 2rem 0;
+    }
+    .btn-primary {
+      display: inline-block;
+      padding: 1rem 2rem;
+      background: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
+    .btn-primary:hover {
+      background: #0056b3;
+    }

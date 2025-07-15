@@ -1,0 +1,125 @@
+ .transactions {
+      padding: 2rem;
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+    .transaction-form {
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      margin-bottom: 2rem;
+    }
+    .form-group {
+      margin-bottom: 1rem;
+    }
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+    input, select {
+      width: 100%;
+      padding: 0.75rem;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+    input.error {
+      border-color: #dc3545;
+    }
+    .error-message {
+      color: #dc3545;
+      font-size: 0.875rem;
+      margin-top: 0.25rem;
+    }
+    .form-actions {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+    .btn-primary, .btn-secondary {
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 4px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .btn-primary {
+      background: #007bff;
+      color: white;
+    }
+    .btn-primary:disabled {
+      background: #6c757d;
+      cursor: not-allowed;
+    }
+    .btn-secondary {
+      background: #6c757d;
+      color: white;
+    }
+    .transactions-list {
+      background: white;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    .transaction-grid {
+      display: grid;
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+    .transaction-card {
+      padding: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      background: #f8f9fa;
+    }
+    .transaction-card.credit {
+      border-left: 4px solid #28a745;
+    }
+    .transaction-card.debit {
+      border-left: 4px solid #dc3545;
+    }
+    .transaction-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.5rem;
+    }
+    .amount.credit {
+      color: #28a745;
+      font-weight: bold;
+    }
+    .amount.debit {
+      color: #dc3545;
+      font-weight: bold;
+    }
+    .status {
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+    .status.pending {
+      background: #fff3cd;
+      color: #856404;
+    }
+    .status.completed {
+      background: #d1edff;
+      color: #004085;
+    }
+    .status.failed {
+      background: #f8d7da;
+      color: #721c24;
+    }
+    .no-transactions {
+      text-align: center;
+      color: #6c757d;
+      margin: 2rem 0;
+    }

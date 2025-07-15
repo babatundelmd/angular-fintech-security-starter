@@ -1,0 +1,110 @@
+ <div class="transactions">
+      <div class="header">
+        <h1>Transactions</h1>
+        <button (click)="showNewTransactionForm()" class="btn-primary">
+          New Transaction
+        </button>
+      </div>
+
+      @if (showForm()) {
+        <div class="transaction-form">
+          <h3>New Transaction</h3>
+          <form [formGroup]="transactionForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+              <label for="amount">Amount</label>
+              <input
+                type="number"
+                id="amount"
+                formControlName="amount"
+                [class.error]="amountControl.invalid && amountControl.touched"
+                min="0.01"
+                step="0.01"
+                required
+              />
+              @if (amountControl.invalid && amountControl.touched) {
+                <div class="error-message">
+                  @if (amountControl.errors?.['required']) {
+                    <span>Amount is required</span>
+                  }
+                  @if (amountControl.errors?.['min']) {
+                    <span>Amount must be greater than 0</span>
+                  }
+                </div>
+              }
+            </div>
+
+            <div class="form-group">
+              <label for="description">Description</label>
+              <input
+                type="text"
+                id="description"
+                formControlName="description"
+                [class.error]="descriptionControl.invalid && descriptionControl.touched"
+                maxlength="255"
+                required
+              />
+              @if (descriptionControl.invalid && descriptionControl.touched) {
+                <div class="error-message">
+                  @if (descriptionControl.errors?.['required']) {
+                    <span>Description is required</span>
+                  }
+                  @if (descriptionControl.errors?.['maxlength']) {
+                    <span>Description must be less than 255 characters</span>
+                  }
+                </div>
+              }
+            </div>
+
+            <div class="form-group">
+              <label for="type">Type</label>
+              <select id="type" formControlName="type" required>
+                <option value="">Select type</option>
+                <option value="credit">Credit</option>
+                <option value="debit">Debit</option>
+              </select>
+            </div>
+
+            <div class="form-actions">
+              <button type="button" (click)="cancelForm()" class="btn-secondary">
+                Cancel
+              </button>
+              <button
+                type="submit"
+                [disabled]="transactionForm.invalid || isSubmitting()"
+                class="btn-primary"
+              >
+                @if (isSubmitting()) {
+                  <span>Processing...</span>
+                } @else {
+                  <span>Submit Transaction</span>
+                }
+              </button>
+            </div>
+          </form>
+        </div>
+      }
+
+      <div class="transactions-list">
+        <h3>Recent Transactions</h3>
+        @if (transactions().length === 0) {
+          <p class="no-transactions">No transactions found.</p>
+        } @else {
+          <div class="transaction-grid">
+            @for (transaction of transactions(); track transaction.id) {
+              <div class="transaction-card" [class]="transaction.type">
+                <div class="transaction-header">
+                  <span class="amount" [class]="transaction.type">
+                    {{ transaction.type === 'credit' ? '+' : '-' }}{{ transaction.amount | currency }}
+                  </span>
+                  <span class="status" [class]="transaction.status">
+                    {{ transaction.status | titlecase }}
+                  </span>
+                </div>
+                <p class="description">{{ transaction.description }}</p>
+                <small class="date">{{ transaction.date | date:'medium' }}</small>
+              </div>
+            }
+          </div>
+        }
+      </div>
+    </div>

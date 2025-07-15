@@ -1,0 +1,32 @@
+  <div class="admin-dashboard">
+      <h1>Admin Dashboard</h1>
+
+      <div class="admin-nav">
+        <a routerLink="/admin/users" routerLinkActive="active" class="nav-card">
+          <h3>User Management</h3>
+          <p>Manage user accounts and permissions</p>
+        </a>
+
+        <a routerLink="/admin/audit" routerLinkActive="active" class="nav-card">
+          <h3>Audit Logs</h3>
+          <p>View security and transaction logs</p>
+        </a>
+      </div>
+
+      <div class="admin-stats">
+        <div class="stat-card">
+          <h3>Total Users</h3>
+          <p class="stat-number">{{ totalUsers() }}</p>
+        </div>
+
+        <div class="stat-card">
+          <h3>Security Alerts</h3>
+          <p class="stat-number alert">{{ securityAlerts() }}</p>
+        </div>
+
+        <div class="stat-card">
+          <h3>System Status</h3>
+          <p class="status-healthy">All Systems Operational</p>
+        </div>
+      </div>
+    </div>
