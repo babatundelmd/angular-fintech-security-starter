@@ -5,7 +5,7 @@ This is an Angular application implementing comprehensive security measures spec
 ## 🔐 Security Features Implemented
 
 ### ✅ Framework Security
-- **Angular 17+** with standalone components and signals
+- **Angular 19+** with standalone components and signals
 - **Strict TypeScript** configuration with comprehensive type checking
 - **Content Security Policy (CSP)** configured in index.html and server configs
 - **HTTPS enforcement** in development and production
