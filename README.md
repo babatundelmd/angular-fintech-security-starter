@@ -75,7 +75,6 @@ npm run security-check
 | Route Guards | ✅ | Auth + role-based guards |
 | Error Handling | ✅ | Global error handler |
 | Dependency Audit | ✅ | npm audit + automated checks |
-| PWA Security | ✅ | Restricted SW caching |
 
 ## 🏗️ Architecture
 
