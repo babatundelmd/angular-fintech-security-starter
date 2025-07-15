@@ -37,7 +37,7 @@ This is an Angular application implementing comprehensive security measures spec
 ## 🚀 Getting Started
 
 ### Prerequisites
-- Node.js 20+
+- Node.js 22+
 - Angular CLI 19+
 
 ### Installation
