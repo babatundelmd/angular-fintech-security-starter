@@ -1,6 +1,6 @@
 # Secure Angular Fintech Starter App
 
-This is a production-ready Angular application implementing comprehensive security measures specifically designed for fintech applications.
+This is an Angular application implementing comprehensive security measures specifically designed for fintech applications.
 
 ## 🔐 Security Features Implemented
 
@@ -34,16 +34,11 @@ This is a production-ready Angular application implementing comprehensive securi
 - **Request/response sanitization**
 - **API rate limiting** considerations
 
-### ✅ PWA Security
-- **Service Worker** with restricted caching scope
-- **No sensitive data caching** in SW
-- **Secure manifest configuration**
-
 ## 🚀 Getting Started
 
 ### Prerequisites
-- Node.js 18+
-- Angular CLI 17+
+- Node.js 20+
+- Angular CLI 19+
 
 ### Installation
 ```bash
